@@ -33,23 +33,24 @@ public class Card {
      * @return A boolean representing IBAN  validator.
      */
     public boolean ibanNumberCheck(String accountNumber) {
-        
+
         StringBuilder numericOfLetter = new StringBuilder();
         String newAccountNumber = accountNumber.trim();
+        try {
+            if(newAccountNumber.length() >= IBAN_NUMBER_MIN_SIZE && newAccountNumber.length() <= IBAN_NUMBER_MAX_SIZE) {
 
-        if(newAccountNumber.length() < IBAN_NUMBER_MIN_SIZE || newAccountNumber.length() > IBAN_NUMBER_MAX_SIZE) {
-            System.out.println("Wrong iban length isn't between 15-32" + accountNumber);
-            return false;
-        }else {
-            newAccountNumber = newAccountNumber.substring(4) + newAccountNumber.substring(0, 4);
-            
-            for (int i = 0; i < newAccountNumber.length(); i++) {
-                numericOfLetter.append(Character.getNumericValue(newAccountNumber.charAt(i)));
+                newAccountNumber = newAccountNumber.substring(4) + newAccountNumber.substring(0, 4);
+
+                for (int i = 0; i < newAccountNumber.length(); i++) {
+                    numericOfLetter.append(Character.getNumericValue(newAccountNumber.charAt(i)));
+                }
+                BigInteger ibanNumber = new BigInteger(numericOfLetter.toString());
+                return ibanNumber.mod(IBAN_CHECKSUM_DIVIDEND).intValue() == 1;
             }
-            BigInteger ibanNumber = new BigInteger(numericOfLetter.toString());
+        } catch (Exception ex) {
 
-            return ibanNumber.mod(IBAN_CHECKSUM_DIVIDEND).intValue() == 1;
+            System.out.println("IbanNumberCheck" + ex.getMessage());
         }
+        return false;
     }
-
 }
