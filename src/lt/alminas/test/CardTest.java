@@ -24,6 +24,7 @@ public class CardTest {
         assertEquals(expectedTrue,card.ibanNumberCheck("BE71096123456769"));
         assertEquals(expectedTrue,card.ibanNumberCheck("BA393385804800211234"));
     }
+
     @Test
     public void testIbanNumberCheck1() {
         assertEquals(expectedTrue,card.ibanNumberCheck("BR1500000000000010932840814P2"));
@@ -37,6 +38,7 @@ public class CardTest {
         assertEquals(expectedTrue,card.ibanNumberCheck("EG800002000156789012345180002"));
         assertEquals(expectedTrue,card.ibanNumberCheck("SV43ACAT00000000000000123123"));
     }
+
     @Test
     public void testIbanNumberCheck2() {
         assertEquals(expectedTrue,card.ibanNumberCheck("EE471000001020145685"));
@@ -50,6 +52,7 @@ public class CardTest {
         assertEquals(expectedTrue,card.ibanNumberCheck("GL8964710123456789"));
         assertEquals(expectedTrue,card.ibanNumberCheck("GT20AGRO00000000001234567890"));
     }
+
     @Test
     public void testIbanNumberCheck3() {
         assertEquals(expectedTrue,card.ibanNumberCheck("VA59001123000012345678"));
@@ -77,6 +80,7 @@ public class CardTest {
         assertEquals(expectedTrue,card.ibanNumberCheck("MU43BOMM0101123456789101000MUR"));
         assertEquals(expectedTrue,card.ibanNumberCheck("MD21EX000000000001234567"));
     }
+
     @Test
     public void testIbanNumberCheck5() {
         assertEquals(expectedTrue,card.ibanNumberCheck("MC5810096180790123456789085"));
@@ -143,6 +147,44 @@ public class CardTest {
         assertNotEquals(expectedFalse,card.ibanNumberCheck("AE460090000000123456789"));
         assertNotEquals(expectedFalse,card.ibanNumberCheck("GB33BUKB20201555555555"));
         assertNotEquals(expectedFalse,card.ibanNumberCheck("VG21PACG0000000123456789"));
+    }
+
+    @Test
+    public void testIbanNumberCheck10() {
+        assertEquals(expectedTrue,card.ibanNumberCheck("DZ580002100001113000000570"));
+        assertEquals(expectedTrue,card.ibanNumberCheck("AO06004400006729503010102"));
+        assertEquals(expectedTrue,card.ibanNumberCheck("BJ66BJ0610100100144390000769"));
+        assertEquals(expectedTrue,card.ibanNumberCheck("BF42BF0840101300463574000390"));
+        assertEquals(expectedTrue,card.ibanNumberCheck("BI43201011067444"));
+        assertEquals(expectedTrue,card.ibanNumberCheck("CM2110002000300277976315008"));
+        assertEquals(expectedTrue,card.ibanNumberCheck("CV64000500000020108215144"));
+        assertEquals(expectedTrue,card.ibanNumberCheck("CF4220001000010120069700160"));
+        assertEquals(expectedTrue,card.ibanNumberCheck("TD8960002000010271091600153"));
+    }
+
+    @Test
+    public void testIbanNumberCheck11() {
+        assertEquals(expectedTrue,card.ibanNumberCheck("KM4600005000010010904400137"));
+        assertEquals(expectedTrue,card.ibanNumberCheck("CG3930011000101013451300019"));
+        assertEquals(expectedTrue,card.ibanNumberCheck("DJ2110002010010409943020008"));
+        assertEquals(expectedTrue,card.ibanNumberCheck("GQ7050002001003715228190196"));
+        assertEquals(expectedTrue,card.ibanNumberCheck("GA2140021010032001890020126"));
+        assertEquals(expectedTrue,card.ibanNumberCheck("GW04GW1430010181800637601"));
+        assertEquals(expectedTrue,card.ibanNumberCheck("HN54PISA00000000000000123124"));
+        assertEquals(expectedTrue,card.ibanNumberCheck("IR710570029971601460641001"));
+        assertEquals(expectedTrue,card.ibanNumberCheck("CI93CI0080111301134291200589"));
+    }
+
+    @Test
+    public void testIbanNumberCheck12() {
+        assertEquals(expectedTrue,card.ibanNumberCheck("MG4600005030071289421016045"));
+        assertEquals(expectedTrue,card.ibanNumberCheck("ML13ML0160120102600100668497"));
+        assertEquals(expectedTrue,card.ibanNumberCheck("MA64011519000001205000534921"));
+        assertEquals(expectedTrue,card.ibanNumberCheck("MZ59000301080016367102371"));
+        assertEquals(expectedTrue,card.ibanNumberCheck("NI92BAMC000000000000000003123123"));
+        assertEquals(expectedTrue,card.ibanNumberCheck("NE58NE0380100100130305000268"));
+        assertEquals(expectedTrue,card.ibanNumberCheck("SN08SN0100152000048500003035"));
+        assertEquals(expectedTrue,card.ibanNumberCheck("TG53TG0090604310346500400070"));
     }
 
 }
