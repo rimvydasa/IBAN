@@ -39,6 +39,7 @@ public class Main {
                 case 0:
                     System.out.println("Quit");
                     quit = true;
+                    sc.close();
                     break;
                 case 1:
                     System.out.println("Please enter IBAN ");

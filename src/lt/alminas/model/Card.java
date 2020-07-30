@@ -48,8 +48,7 @@ public class Card {
                 return ibanNumber.mod(IBAN_CHECKSUM_DIVIDEND).intValue() == 1;
             }
         } catch (Exception ex) {
-
-            System.out.println("IbanNumberCheck" + ex.getMessage());
+            ex.printStackTrace();
         }
         return false;
     }
